@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="">
+<head>
+    <title>Subscriber Form</title>
+</head>
+<body>
+<!-- Display success or failure message -->
+<div th:if="${message}" th:text="${message}"></div>
+
+<form action="#" th:action="@{/subscribers/save}" th:object="${subscriber}" method="post">
+    <label for="subscName">Name:</label>
+    <input type="text" id="subscName" th:field="*{subscName}" /><br/>
+
+    <label for="subscSurname">Surname:</label>
+    <input type="text" id="subscSurname" th:field="*{subscSurname}" /><br/>
+
+    <label for="msisdn">MSISDN:</label>
+    <input type="text" id="msisdn" th:field="*{msisdn}" /><br/>
+
+    <label for="tariffId">Tariff ID:</label>
+    <input type="text" id="tariffId" th:field="*{tariffId}" /><br/>
+
+    <label for="startDate">Start Date:</label>
+    <input type="date" id="startDate" th:field="*{startDate}" /><br/>
+
+    <button type="submit">Save</button>
+</form>
+</body>
+</html>
